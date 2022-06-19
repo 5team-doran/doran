@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>memberSignUp-sql.xml</comment>
+
+	<!-- 회원가입 -->
+	<entry key="signUp">
+		INSERT INTO MEMBER
+		VALUES(SEQ_MEMBER_NO.NEXTVAL , ?, ?, ? , ? , 
+		TO_DATE(?, 'YYYY.MM.DD'), ?, ?, DEFAULT, DEFAULT, ?)
+	</entry>
+	
+	<!-- 인증번호 수정 -->
+	    <entry key="updateCertification">
+        UPDATE CERTIFICATION SET
+        C_NUMBER = ?,
+        ISSUE_DT = SYSDATE
+        WHERE EMAIL = ?
+    </entry>
+   
+    <!-- 인증번호 생성 -->
+    <entry key="insertCertification">
+        INSERT INTO CERTIFICATION VALUES(?, ?, SYSDATE)
+    </entry>
+    
+    <!-- 인증번호 확인 -->
+    <entry key="checkNumber">
+    	SELECT 
+		   CASE WHEN (SELECT '1' FROM CERTIFICATION
+		            WHERE EMAIL = ?
+		            AND C_NUMBER = ?)  = 1
+		   
+		      THEN NVL( (SELECT '1' FROM CERTIFICATION
+		            WHERE EMAIL = ?
+		            AND ISSUE_DT + (INTERVAL '5' MINUTE) >= SYSDATE) , '2') 
+		
+		      ELSE '3'   
+		   END         
+		FROM DUAL
+	</entry>
+	
+	<!-- 아이디 중복 검사 -->
+	<entry key="idDupCheck">
+		SELECT COUNT(*) FROM MEMBER
+		WHERE MEMBER_ID = ?
+		AND SECESSION_FL = 'N'
+	</entry>
+</properties>

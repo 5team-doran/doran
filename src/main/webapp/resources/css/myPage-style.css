@@ -1,0 +1,262 @@
+*{box-sizing: border-box;}
+
+*{font-family: 'NanumBarunGothic';}
+
+
+.myPage-content{
+    width: 1140px;
+    margin: 50px auto;
+    display: flex;
+}
+
+.left-side{
+    width: 25%;
+    border-right: 2px solid #ddd;
+}
+
+.list-group{
+    width: 100%;
+    padding: 0 20px 0 0;
+}
+
+.list-group>li{
+    list-style: none;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.list-group > li > a{
+    text-decoration: none;
+    color : black;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 2px solid #ddd;
+}
+
+.list-group>li>a:hover{
+    border-bottom: 2px solid #FF8339 ;
+}
+
+.myPage-main{
+    width: 75%;
+    padding: 0 50px;
+}
+
+.myPage-title{
+    margin : 0 0 15px 0;
+    font-size: 2.5em;
+}
+
+.myPage-explanation{
+    display: block;
+    margin-top : 30px;
+    font-size: 16px;
+    letter-spacing: -1px;
+}
+
+.myPage-row{
+    width: 500px;
+    height: 50px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    /* border-bottom: 2px solid #ccc; */
+}
+
+.myPage-row>*{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.myPage-row>label{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    height: 100%;
+    color:white;
+    padding: 12px 0;
+    background-color:#FF8339;
+
+}
+
+.myPage-row>span{
+    width: 70%;
+    padding-left:20px
+}
+
+.myPage-row>input{
+    width: 70%;
+    height: 100%;
+    padding-left: 20px;
+    border: 0;
+    border-bottom: 2px solid #ddd;
+    outline : 0;
+    font-weight: normal;
+}
+
+.myPage-row:focus-within{
+    border-bottom: 2px solid #FF8339;
+}
+
+form[name='myPage-form']{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#info-update-btn{
+    width: 65%;
+    padding: 10px;
+    margin : 50px 0;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FF8339;
+    color: white;
+    cursor: pointer;
+}
+
+.message-row{
+    width: 500px;
+    height: 30px;
+    display: flex;
+    margin-top: 10px;
+    padding-left: 150px;
+
+}
+
+.error{
+    color : red;
+}
+
+.confirm{
+    color : green;
+}
+
+
+/* 프로필 */
+
+/* 프로필 이미지 영역 */
+.profile-image-area{
+    width: 150px;
+    height: 150px;
+    border : 3px solid #ddd;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    position : relative;
+}
+
+/* 프로필 이미지 */
+#profile-image{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 50%;
+}
+
+/* 프로필 버튼 영역 */
+.profile-btn-area{
+    width: 230px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* 프로필 버튼 영역의 모든 자식 요소 */
+.profile-btn-area > *{
+    width: 110px;
+    height: 33px;
+
+    padding: 5px 10px;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* 파일 선택 버튼 */
+#input-image{
+    display: none;
+}
+
+/* 변경하기 버튼 */
+.profile-btn-area > button{
+    background-color: #FF8339;
+    color : white;
+    border: 0;
+}
+
+/* 프로필 이미지 삭제 버튼 */
+#delete-image{
+    position : absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+/* 회원 약관 타이틀 */
+
+.info-title{
+    margin-top: 20px;
+}
+
+/* 테이블 스타일 */
+
+.list-wrapper{
+    margin: 7px auto;
+}
+/* 목록 출력 테이블 */
+.list-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.list-table > thead{
+    background-color: #ff8339;
+    color: white;
+}
+.list-table tr{
+    height: 35px;
+}
+
+.list-table > tbody > tr{
+    border-bottom: 1px solid gray;
+}
+
+.list-table tr > *{
+    text-align: center;
+}
+
+.list-table tr > *:nth-of-type(1){ width: 10%;}
+
+.list-table tr > *:nth-of-type(2){ width: 50%;}
+.list-table tr > td:nth-of-type(2){
+    text-align: left;
+    padding-left: 50px;
+}
+.list-table tr > *:nth-of-type(3){ width: 15%;}
+.list-table tr > *:nth-of-type(4){ width: 15%;}
+.list-table tr > *:nth-of-type(5){ width: 10%;}
+
+.list-table a{
+    text-decoration: none;
+    color: black;
+}
+
+.list-table a:hover{
+    text-decoration: underline;
+}
